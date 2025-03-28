@@ -1,0 +1,90 @@
+{
+  "project_info": {
+    "project_number": "267226608096",
+    "project_id": "authtest-30f09",
+    "storage_bucket": "authtest-30f09.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:267226608096:android:df6245a3c22faf627e7b85",
+        "android_client_info": {
+          "package_name": "com.example.auth_test"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "267226608096-2g845igv5sqfeksm31ebih78jfhps51v.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.auth_test",
+            "certificate_hash": "f613936a90b871ffb0528fc829cd13913a213200"
+          }
+        },
+        {
+          "client_id": "267226608096-i6ga2hat3h9lt2gvehdpe3291ec5b1r2.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB2ggDHawEoHH6D08Sy8j_QRxi3L5klBxY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "267226608096-i6ga2hat3h9lt2gvehdpe3291ec5b1r2.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "267226608096-vcosc4afchdhs2tnjbepf0tl1a9oqbt4.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.authTest"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:267226608096:android:ebf296583029ca4b7e7b85",
+        "android_client_info": {
+          "package_name": "com.example.news_app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "267226608096-i6ga2hat3h9lt2gvehdpe3291ec5b1r2.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB2ggDHawEoHH6D08Sy8j_QRxi3L5klBxY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "267226608096-i6ga2hat3h9lt2gvehdpe3291ec5b1r2.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "267226608096-vcosc4afchdhs2tnjbepf0tl1a9oqbt4.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.authTest"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
