@@ -36,12 +36,12 @@ class LoginView extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.center,
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      CustomTextWidget(
+                      const CustomTextWidget(
                         text: "Login",
                         fontSize: 35,
                         fontWeight: FontWeight.bold,
                       ),
-                      CustomTextWidget(
+                      const CustomTextWidget(
                         text: "Welcome in our app",
                         fontSize: 20,
                         fontWeight: FontWeight.w400,
@@ -76,18 +76,18 @@ class LoginView extends StatelessWidget {
                         ),
                       ),
 
-                      Divider(color: Colors.black, thickness: 1, height: 60),
+                      const Divider(color: Colors.black, thickness: 1, height: 60),
                       Row(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
-                          CustomTextWidget(
+                          const CustomTextWidget(
                             text: "Or login with",
                             fontSize: 14,
                             fontWeight: FontWeight.w400,
                           ),
                           TextButton(
                             onPressed: () {},
-                            child: CustomTextWidget(
+                            child: const CustomTextWidget(
                               text: "Google",
                               fontSize: 15,
                               fontWeight: FontWeight.w500,
@@ -98,7 +98,7 @@ class LoginView extends StatelessWidget {
                       Row(
                         mainAxisAlignment: MainAxisAlignment.end,
                         children: [
-                          CustomTextWidget(
+                          const CustomTextWidget(
                             text: "Don't have an account?",
                             fontSize: 14,
                             fontWeight: FontWeight.w400,
@@ -108,11 +108,11 @@ class LoginView extends StatelessWidget {
                               Navigator.push(
                                 context,
                                 MaterialPageRoute(
-                                  builder: (context) => SignupView(),
+                                  builder: (context) => const SignupView(),
                                 ),
                               );
                             },
-                            child: CustomTextWidget(
+                            child: const CustomTextWidget(
                               text: "Signup",
                               fontSize: 15,
                               fontWeight: FontWeight.w500,

@@ -24,7 +24,7 @@ class CustomButtonWidget extends StatelessWidget {
     return MaterialButton(
       shape: OutlineInputBorder(
         borderRadius: BorderRadius.circular(17),
-        borderSide: BorderSide(color: Colors.transparent),
+        borderSide: const BorderSide(color: Colors.transparent),
       ),
       onPressed: onPressed,
       color: color,

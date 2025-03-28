@@ -3,13 +3,17 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:news_app/core/Utils/service_locator.dart';
 import 'package:news_app/features/login/view/login_view.dart';
 import 'package:news_app/firebase_options.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
-  runApp( DevicePreview(builder: (context)=>MyApp() , enabled: !kReleaseMode,));
+  setup();
+  runApp(
+    DevicePreview(builder: (context) => const MyApp(), enabled: !kReleaseMode),
+  );
 }
 
 class MyApp extends StatelessWidget {
@@ -29,7 +33,7 @@ class MyApp extends StatelessWidget {
             scaffoldBackgroundColor: Colors.white,
             primaryColor: Colors.blue,
           ),
-          home: LoginView(),
+          home: const LoginView(),
         );
       },
     );
