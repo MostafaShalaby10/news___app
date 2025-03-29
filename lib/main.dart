@@ -4,6 +4,7 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:news_app/core/Utils/service_locator.dart';
+import 'package:news_app/core/Utils/shared_prefrences.dart';
 import 'package:news_app/features/home/view/home_view.dart';
 import 'package:news_app/features/login/view/login_view.dart';
 import 'package:news_app/firebase_options.dart';
@@ -12,13 +13,17 @@ void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
   setup();
+
   runApp(
-    DevicePreview(builder: (context) => const MyApp(), enabled: !kReleaseMode),
+    DevicePreview(builder: (context) =>  MyApp(
+      startScreen: SharedPrefs.getData(key: "user")==null?const LoginView():const HomeView(),
+    ), enabled: !kReleaseMode),
   );
 }
 
 class MyApp extends StatelessWidget {
-  const MyApp({super.key});
+  final Widget startScreen ; 
+  const MyApp({super.key, required this.startScreen});
 
   @override
   Widget build(BuildContext context) {
@@ -34,7 +39,7 @@ class MyApp extends StatelessWidget {
             scaffoldBackgroundColor: Colors.white,
             primaryColor: Colors.blue,
           ),
-          home: const HomeView(),
+          home:  startScreen,
         );
       },
     );

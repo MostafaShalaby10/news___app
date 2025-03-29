@@ -9,6 +9,8 @@ import 'package:news_app/features/home/model/repos/home_repo_imp.dart';
 import 'package:news_app/features/home/model_view/cubit/home_cubit.dart';
 import 'package:url_launcher/url_launcher.dart';
 
+import '../../login/view/login_view.dart';
+
 class HomeView extends StatelessWidget {
   const HomeView({super.key});
 
@@ -18,12 +20,31 @@ class HomeView extends StatelessWidget {
       create: (context) => HomeCubit(getIt<HomeRepoImp>())..getNews(),
       child: BlocConsumer<HomeCubit, HomeState>(
         listener: (context, state) {
-          log(state.toString());
+          if (state is SuccessfullyLogout) {
+            Navigator.pushAndRemoveUntil(
+              context,
+              MaterialPageRoute(builder: (context) => const LoginView()),
+              (route) => false,
+            );
+          }
         },
         builder: (context, state) {
           HomeCubit homeCubit = HomeCubit.get(context);
           return Scaffold(
             appBar: AppBar(
+              actions: [
+                TextButton(
+                  onPressed: () {
+                    homeCubit.logout();
+                  },
+                  child: const CustomTextWidget(
+                    text: "Logout",
+                    fontSize: 15,
+                    fontWeight: FontWeight.w600,
+                    textColor: Colors.red,
+                  ),
+                ),
+              ],
               centerTitle: true,
               title: const CustomTextWidget(
                 text: "News App",
@@ -42,8 +63,10 @@ class HomeView extends StatelessWidget {
                               itemCount: homeCubit.news.length,
                               itemBuilder:
                                   (context, index) => InkWell(
-                                    onTap: () => launchUrl(
-                                        Uri.parse(homeCubit.news[index].url!)),
+                                    onTap:
+                                        () => launchUrl(
+                                          Uri.parse(homeCubit.news[index].url!),
+                                        ),
                                     child: ListViewItem(
                                       image: homeCubit.news[index].urlToImage!,
                                       title: homeCubit.news[index].title!,

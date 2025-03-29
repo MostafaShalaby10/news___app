@@ -9,6 +9,8 @@ import 'package:news_app/features/login/model/repos/login_repo_imp.dart';
 import 'package:news_app/features/login/view_model/cubit/login_cubit.dart';
 import 'package:news_app/features/signup/views/signup_view.dart';
 
+import '../../home/view/home_view.dart';
+
 class LoginView extends StatelessWidget {
   const LoginView({super.key});
 
@@ -23,7 +25,12 @@ class LoginView extends StatelessWidget {
         listener: (context, state) {
           if (state is SuccessfullyLoginWithEmailAndPassword ||
               state is SuccessfullyLoginWithGoogle) {
-            // Move to home page
+                  Navigator.pushAndRemoveUntil(
+                    context,
+                    MaterialPageRoute(builder: (context) => const HomeView()),
+                    (route) => false,
+                  );
+                  
           } else if (state is ErrorLoginWithEmailAndPassword ||
               state is ErrorLoginWithGoogle) {
             // Error message
