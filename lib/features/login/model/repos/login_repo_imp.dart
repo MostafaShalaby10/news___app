@@ -9,7 +9,7 @@ class LoginRepoImp implements LoginRepoInterface {
   Future loginUsingEmailAndPassword({
     required String email,
     required String password,
-  }) async{
+  }) async {
     await getIt<FirebaseAuth>().signInWithEmailAndPassword(
       email: email,
       password: password,

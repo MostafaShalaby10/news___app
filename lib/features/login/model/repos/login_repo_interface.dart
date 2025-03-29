@@ -5,7 +5,4 @@ abstract class LoginRepoInterface {
   });
 
   Future loginUsingGoogle();
-
-
-
 }

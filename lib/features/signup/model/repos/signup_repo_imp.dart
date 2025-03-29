@@ -31,6 +31,6 @@ class SignupRepoImp implements SignupRepoInterface {
       accessToken: googleSignInAuthentication.accessToken,
       idToken: googleSignInAuthentication.idToken,
     );
-   return await getIt<FirebaseAuth>().signInWithCredential(crediantal);
+    return await getIt<FirebaseAuth>().signInWithCredential(crediantal);
   }
 }

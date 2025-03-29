@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -22,12 +21,13 @@ class LoginView extends StatelessWidget {
       create: (context) => LoginCubit(getIt<LoginRepoImp>()),
       child: BlocConsumer<LoginCubit, LoginState>(
         listener: (context, state) {
-            if(state is SuccessfullyLoginWithEmailAndPassword || state is SuccessfullyLoginWithGoogle)
-            {
-              // Move to home page
-            }else if(state is ErrorLoginWithEmailAndPassword || state is ErrorLoginWithGoogle){
-              // Error message
-            }
+          if (state is SuccessfullyLoginWithEmailAndPassword ||
+              state is SuccessfullyLoginWithGoogle) {
+            // Move to home page
+          } else if (state is ErrorLoginWithEmailAndPassword ||
+              state is ErrorLoginWithGoogle) {
+            // Error message
+          }
         },
         builder: (context, state) {
           LoginCubit loginCubit = LoginCubit.get(context);
@@ -75,20 +75,22 @@ class LoginView extends StatelessWidget {
                           },
                         ),
 
-                       state is! LoadingLoginWithEmailAndPassword? SizedBox(
-                          width: double.infinity,
-                          child: CustomButtonWidget(
-                            text: "Login",
-                            onPressed: () {
-                              if (formKey.currentState!.validate()) {
-                                loginCubit.loginUsingEmailAndPassword(
-                                  email: emailController.text,
-                                  password: passwordController.text,
-                                );
-                              }
-                            },
-                          ),
-                        ):const Center(child:  CircularProgressIndicator()),
+                        state is! LoadingLoginWithEmailAndPassword
+                            ? SizedBox(
+                              width: double.infinity,
+                              child: CustomButtonWidget(
+                                text: "Login",
+                                onPressed: () {
+                                  if (formKey.currentState!.validate()) {
+                                    loginCubit.loginUsingEmailAndPassword(
+                                      email: emailController.text,
+                                      password: passwordController.text,
+                                    );
+                                  }
+                                },
+                              ),
+                            )
+                            : const Center(child: CircularProgressIndicator()),
 
                         const Divider(
                           color: Colors.black,

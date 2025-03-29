@@ -63,8 +63,10 @@ class DefaultFirebaseOptions {
     messagingSenderId: '267226608096',
     projectId: 'authtest-30f09',
     storageBucket: 'authtest-30f09.firebasestorage.app',
-    androidClientId: '267226608096-2g845igv5sqfeksm31ebih78jfhps51v.apps.googleusercontent.com',
-    iosClientId: '267226608096-mi8tvp6etu77edfn9mlsagd65t2cf72f.apps.googleusercontent.com',
+    androidClientId:
+        '267226608096-2g845igv5sqfeksm31ebih78jfhps51v.apps.googleusercontent.com',
+    iosClientId:
+        '267226608096-mi8tvp6etu77edfn9mlsagd65t2cf72f.apps.googleusercontent.com',
     iosBundleId: 'com.example.newsApp',
   );
 }

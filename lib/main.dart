@@ -4,6 +4,7 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:news_app/core/Utils/service_locator.dart';
+import 'package:news_app/features/home/view/home_view.dart';
 import 'package:news_app/features/login/view/login_view.dart';
 import 'package:news_app/firebase_options.dart';
 
@@ -33,7 +34,7 @@ class MyApp extends StatelessWidget {
             scaffoldBackgroundColor: Colors.white,
             primaryColor: Colors.blue,
           ),
-          home: const LoginView(),
+          home: const HomeView(),
         );
       },
     );

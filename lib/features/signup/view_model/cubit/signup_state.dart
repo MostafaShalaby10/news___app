@@ -15,16 +15,15 @@ final class SuccessfullyCreateUserAccountUsingEmailAndPassword
 final class ErrorCreateUserAccountUsingEmailAndPassword extends SignupState {
   final String error;
 
-  ErrorCreateUserAccountUsingEmailAndPassword(this.error); 
+  ErrorCreateUserAccountUsingEmailAndPassword(this.error);
 }
 
 final class LoadingCreateUserAccountUsingGoogle extends SignupState {}
 
-final class SuccessfullyCreateUserAccountUsingGoogle
-    extends SignupState {}
+final class SuccessfullyCreateUserAccountUsingGoogle extends SignupState {}
 
 final class ErrorCreateUserAccountUsingGoogle extends SignupState {
   final String error;
 
-  ErrorCreateUserAccountUsingGoogle(this.error); 
+  ErrorCreateUserAccountUsingGoogle(this.error);
 }
