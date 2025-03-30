@@ -27,12 +27,10 @@ class LoginCubit extends Cubit<LoginState> {
     loginRepoInterface
         .loginUsingEmailAndPassword(email: email, password: password)
         .then((value) {
-          // SharedPrefs.saveData(key: "user", value: true);
-          // log(SharedPrefs.getData(key: "user"));
+          SharedPrefs.saveData(key: "user", value: true);
           emit(SuccessfullyLoginWithEmailAndPassword());
         })
         .catchError((error) {
-          log(error.toString() );
           emit(ErrorLoginWithEmailAndPassword(error.toString()));
         });
   }

@@ -17,5 +17,5 @@ void setup() {
   getIt.registerLazySingleton(() => SignupRepoImp());
   getIt.registerLazySingleton(() => LoginRepoImp());
   getIt.registerLazySingleton(() => HomeRepoImp());
-  getIt.registerLazySingleton(() => SharedPreferences.getInstance());
+  getIt.registerLazySingleton(() => SharedPreferences.getInstance);
 }

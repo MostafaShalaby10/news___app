@@ -13,16 +13,23 @@ void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
   setup();
-
+   SharedPrefs.init();
   runApp(
-    DevicePreview(builder: (context) =>  MyApp(
-      startScreen: SharedPrefs.getData(key: "user")==null?const LoginView():const HomeView(),
-    ), enabled: !kReleaseMode),
+    DevicePreview(
+      builder:
+          (context) => MyApp(
+            startScreen:
+                SharedPrefs.getData(key: "user") == null
+                    ? const LoginView()
+                    : const HomeView(),
+          ),
+      enabled: !kReleaseMode,
+    ),
   );
 }
 
 class MyApp extends StatelessWidget {
-  final Widget startScreen ; 
+  final Widget startScreen;
   const MyApp({super.key, required this.startScreen});
 
   @override
@@ -39,7 +46,7 @@ class MyApp extends StatelessWidget {
             scaffoldBackgroundColor: Colors.white,
             primaryColor: Colors.blue,
           ),
-          home:  startScreen,
+          home: startScreen,
         );
       },
     );

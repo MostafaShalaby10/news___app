@@ -8,6 +8,8 @@ import 'package:news_app/features/home/model/models/ResponseModel.dart';
 import 'package:news_app/features/home/view/home_view.dart';
 import 'package:news_app/features/search/model_view/cubit/search_cubit.dart';
 
+import '../../../core/widgets/list_item.dart';
+
 class SearchView extends StatelessWidget {
   final List<ResponseModel> items;
   const SearchView({super.key, required this.items});
