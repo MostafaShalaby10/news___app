@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -23,14 +25,14 @@ class LoginView extends StatelessWidget {
       create: (context) => LoginCubit(getIt<LoginRepoImp>()),
       child: BlocConsumer<LoginCubit, LoginState>(
         listener: (context, state) {
+          log(state.toString());
           if (state is SuccessfullyLoginWithEmailAndPassword ||
               state is SuccessfullyLoginWithGoogle) {
-                  Navigator.pushAndRemoveUntil(
-                    context,
-                    MaterialPageRoute(builder: (context) => const HomeView()),
-                    (route) => false,
-                  );
-                  
+            Navigator.pushAndRemoveUntil(
+              context,
+              MaterialPageRoute(builder: (context) => const HomeView()),
+              (route) => false,
+            );
           } else if (state is ErrorLoginWithEmailAndPassword ||
               state is ErrorLoginWithGoogle) {
             // Error message

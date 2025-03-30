@@ -8,7 +8,7 @@ class CustomTextFormFieldWidget extends StatelessWidget {
     this.suffixIcon,
     this.obscureText,
     this.suffixOnPressed,
-    required this.controller,
+    required this.controller, this.onChanged,
   });
 
   final String hintText;
@@ -17,10 +17,12 @@ class CustomTextFormFieldWidget extends StatelessWidget {
   final bool? obscureText;
   final Function()? suffixOnPressed;
   final TextEditingController controller;
-
+  final Function(String)? onChanged;
+  
   @override
   Widget build(BuildContext context) {
     return TextFormField(
+      onChanged: onChanged,
       validator: (value) => value!.isEmpty ? "Required Field" : null,
       controller: controller,
       obscureText: obscureText ?? false,

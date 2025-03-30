@@ -7,6 +7,7 @@ import 'package:news_app/core/Utils/service_locator.dart';
 import 'package:news_app/core/widgets/custom_text_widget.dart';
 import 'package:news_app/features/home/model/repos/home_repo_imp.dart';
 import 'package:news_app/features/home/model_view/cubit/home_cubit.dart';
+import 'package:news_app/features/search/view/search_view.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 import '../../login/view/login_view.dart';
@@ -32,6 +33,15 @@ class HomeView extends StatelessWidget {
           HomeCubit homeCubit = HomeCubit.get(context);
           return Scaffold(
             appBar: AppBar(
+              leading: IconButton(
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (c) =>  SearchView(items: homeCubit.news,)),
+                  );
+                },
+                icon: Icon(Icons.search),
+              ),
               actions: [
                 TextButton(
                   onPressed: () {

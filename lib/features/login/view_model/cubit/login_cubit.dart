@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:meta/meta.dart';
 import 'package:news_app/core/Utils/shared_prefrences.dart';
@@ -25,10 +27,12 @@ class LoginCubit extends Cubit<LoginState> {
     loginRepoInterface
         .loginUsingEmailAndPassword(email: email, password: password)
         .then((value) {
-          SharedPrefs.saveData(key: "user", value: true);
+          // SharedPrefs.saveData(key: "user", value: true);
+          // log(SharedPrefs.getData(key: "user"));
           emit(SuccessfullyLoginWithEmailAndPassword());
         })
         .catchError((error) {
+          log(error.toString() );
           emit(ErrorLoginWithEmailAndPassword(error.toString()));
         });
   }

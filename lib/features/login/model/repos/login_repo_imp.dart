@@ -10,7 +10,7 @@ class LoginRepoImp implements LoginRepoInterface {
     required String email,
     required String password,
   }) async {
-    await getIt<FirebaseAuth>().signInWithEmailAndPassword(
+   return await getIt<FirebaseAuth>().signInWithEmailAndPassword(
       email: email,
       password: password,
     );

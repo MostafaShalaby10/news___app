@@ -15,7 +15,7 @@ class SharedPrefs{
    return await sharedPreferences?.setDouble(key, value);
  }
 
- static dynamic getData({
+ static dynamic getData( {
    required String key,
  })  {
    return  sharedPreferences?.get(key);
