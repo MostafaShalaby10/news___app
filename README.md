@@ -17,3 +17,20 @@ A news application that fetches the latest news from an API and displays it to u
 
 - **Dynamic API Integration**  
   The app dynamically fetches news content from the API, providing users with up-to-date information.
+
+---
+
+## Technologies Used
+
+This project incorporates the following technologies and tools:
+
+- **Flutter**: Cross-platform development framework for creating responsive UI.
+- **Firebase Authentication**: Provides secure user login and registration using email, password, and Google.
+- **SharedPreferences**: Ensures persistence by checking if a user has logged in before.
+- **Dio**: HTTP client for efficient API calls and error handling.
+- **Cubit**: State management library for predictable application state.
+- **Model-View-ViewModel (MVVM)**: Architectural pattern ensuring clean code and separation of concerns.
+- **Dependency Injection (DI)**: Simplifies module testing and improves app modularity.
+
+  ---
+  
